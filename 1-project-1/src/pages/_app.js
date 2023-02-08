@@ -27,19 +27,19 @@ export default function App({ Component, pageProps }) {
     // Nothing passed to all pages
     // <Component {...pageProps} />
 
-    // Layout passed to all pages
+    // Layout parents all pages
     // <Layout>
     //   <Component {...pageProps} />
     // </Layout>
 
-    // Layout passed to all pages
+    // Layout + Transtion parent all pages
     <Layout>
       <Transition>
         <Component {...pageProps} />
       </Transition>
     </Layout>
 
-    // Timeout context passed to all pages
+    // Timeout context available to all pages
     // <TimeoutContextProvider>
     //   <TimeoutModal />
     //   <TimeoutControls />
