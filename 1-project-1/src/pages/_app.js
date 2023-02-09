@@ -8,6 +8,8 @@ import TimeoutModal from "../two-tiered-timeout-context/components/TimeoutModal"
 import TimeoutControls from "../two-tiered-timeout-context/components/TimeoutControls";
 import { TimeoutContextProvider } from "../two-tiered-timeout-context/timeout-context/Timeout-Context-Two-Tier";
 
+import Nav from "../components/nav/Nav";
+
 // Advanced features, custom 'app'
 // https://nextjs.org/docs/advanced-features/custom-app
 
@@ -33,11 +35,11 @@ export default function App({ Component, pageProps }) {
     // </Layout>
 
     // Layout + Transtion parent all pages
-    <Layout>
-      <Transition>
-        <Component {...pageProps} />
-      </Transition>
-    </Layout>
+    // <Layout>
+    //   <Transition>
+    //     <Component {...pageProps} />
+    //   </Transition>
+    // </Layout>
 
     // Timeout context available to all pages
     // <TimeoutContextProvider>
@@ -47,5 +49,13 @@ export default function App({ Component, pageProps }) {
     //     <Component {...pageProps} />
     //   </Layout>
     // </TimeoutContextProvider>
+
+    // Nav
+    <>
+      <Nav />
+      <Transition>
+        <Component {...pageProps} />
+      </Transition>
+    </>
   );
 }

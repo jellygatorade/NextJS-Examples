@@ -1,9 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Roboto-Thin";
+  src: url("../assets/font/Roboto/Roboto-Thin.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("../assets/font/Roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../assets/font/Roboto/Roboto-Regular.ttf");
+}
+
+/* @font-face {
+  font-family: "Almendra-Display";
+  src: url("../assets/font/Almendra Display/AlmendraDisplay-Regular.ttf");
+} */
+
+:root {
+  font-family: "Roboto-Thin";
+}
+
+/* all below is from Next.js initial project page */
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

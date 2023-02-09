@@ -1,8 +1,12 @@
+import Head from "next/head";
 import Link from "next/link";
 
-function AboutPage() {
+function ContactPage() {
   return (
     <>
+      <Head>
+        <title>Contact</title>
+      </Head>
       <h1>Contact</h1>
       <ul>
         <li>
@@ -14,4 +18,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default ContactPage;
