@@ -1,0 +1,44 @@
+.nav-overlay {
+  /***********************************************
+   * Set by nav-bg.js (navBg.setSizes()) 
+   *
+   * multiples of domVars.navOverlay.clientHeight
+   ***********************************************/
+
+  /* --fade-height-0.5x: 0px; */
+  /* --fade-height-1x: 0px; */
+  /* --fade-height-1.5x: 0px; */
+  /* --fade-height-2x: 0px; */
+  /* --fade-height-2.5x: 0px; */
+  /* --fade-height-3x: 0px; */
+}
+
+.nav-bg-thin {
+  /* background: linear-gradient(to top, #0f0f0f 0%, blue 100%); */
+  /* background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.85) 100%); */
+  background: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(0, 255, 0, 0.85) 100%
+  );
+  /* height: var(--fade-height-1x); */
+  height: 100px;
+}
+
+.nav-bg-full {
+  /* background: linear-gradient(to top, #0f0f0f 0%, blue 100%); */
+  /*
+  background: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(0, 0, 0, 0.85) var(--fade-height-1\.5x) 100%
+  );
+  */
+  background: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(0, 0, 255, 0.85) 100%
+  );
+  /* height: var(--fade-height-2x); */
+  height: 200px;
+}

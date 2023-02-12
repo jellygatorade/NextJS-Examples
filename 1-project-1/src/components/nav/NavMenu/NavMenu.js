@@ -6,7 +6,7 @@ import OpenCloseNavButton from "./OpenCloseNavButton";
 import NavShaderButton from "./NavShaderButton";
 import NavItemButton from "./NavItemButton";
 
-import { fadeIn } from "./fade-in-out-elements";
+import { fadeIn } from "../fade-in-out-elements";
 
 // To do?
 // Thoroughly test with mobile

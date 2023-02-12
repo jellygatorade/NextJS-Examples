@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 
-import NavMenu from "./NavMenu";
+import NavMenu from "./NavMenu/NavMenu";
+import NavMenuBg from "./NavMenu/NavMenuBg/NavMenuBg";
 import TopMargin from "./TopMargin";
 
 function Nav() {
@@ -14,6 +15,7 @@ function Nav() {
   return (
     <>
       <NavMenu ref={navMenuRef} />
+      <NavMenuBg />
       <TopMargin height={navMenuHeight} />
     </>
   );
