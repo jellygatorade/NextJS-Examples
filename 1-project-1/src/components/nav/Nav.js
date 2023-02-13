@@ -4,8 +4,19 @@ import NavMenu from "./NavMenu/NavMenu";
 import NavMenuBg from "./NavMenu/NavMenuBg/NavMenuBg";
 import TopMargin from "./TopMargin";
 
-//
+/*****************************************
+ * Define the menu items
+ *****************************************/
+const navItems = [
+  { type: "Link", href: "/", text: "Home" },
+  { type: "Link", href: "/about", text: "About" },
+  { type: "Link", href: "/contact", text: "Contact" },
+  { type: "a", href: "https://www.google.com", text: "Google" },
+];
 
+/*****************************************
+ * React component
+ *****************************************/
 function Nav() {
   const navMenuRef = useRef(null);
   const [scrollAtTop, setScrollAtTop] = useState(true);
@@ -41,6 +52,7 @@ function Nav() {
         ref={navMenuRef}
         onOpen={() => setNavMenuIsOpen(true)}
         onClose={() => setNavMenuIsOpen(false)}
+        menuItems={navItems}
       />
       <NavMenuBg
         height={scrollAtTop ? 0 : navMenuHeight}

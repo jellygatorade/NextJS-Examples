@@ -13,16 +13,6 @@ import { fadeIn } from "../fade-in-out-elements";
 //
 
 /*****************************************
- * Define the menu items
- *****************************************/
-const navItems = [
-  { type: "Link", href: "/", text: "Home" },
-  { type: "Link", href: "/about", text: "About" },
-  { type: "Link", href: "/contact", text: "Contact" },
-  { type: "a", href: "https://www.google.com", text: "Google" },
-];
-
-/*****************************************
  * Config for menu anim
  *****************************************/
 const randomizeOrder = true; // Choose if order of appearance and disappearance of menu items is randomized
@@ -186,7 +176,7 @@ const NavMenu = forwardRef((props, ref) => {
         {/* Store array of elements in navItemsRef.current for applying the CSS animations to open  and close menu */}
         {/* Instead of specifying [0] and [index + 1] I could probably include a type: "ShaderBtn" in navItems array, but this works fine */}
         <NavShaderButton ref={(el) => (navItemsRef.current[0] = el)} />
-        {navItems.map((item, index) => (
+        {props.menuItems.map((item, index) => (
           <NavItemButton
             key={index}
             ref={(el) => (navItemsRef.current[index + 1] = el)} // index + 1 because NavShaderButton is first
