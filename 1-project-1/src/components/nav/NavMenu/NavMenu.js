@@ -10,7 +10,6 @@ import { fadeIn } from "../fade-in-out-elements";
 
 // To do?
 // Thoroughly test with mobile
-//
 
 /*****************************************
  * Config for menu anim
@@ -136,7 +135,7 @@ const NavMenu = forwardRef((props, ref) => {
     openCloseButtonRef.current.shortenBottomBar(); // method from useImperativeHandle in the ref
     showAllMenuItems(navItemsRef.current);
     menuState = "open";
-    props.onOpen(); // pass to React parent via props
+    props.onOpen(); // inform parent component via props
   }, []);
 
   const closeMenu = useCallback(() => {
@@ -144,7 +143,7 @@ const NavMenu = forwardRef((props, ref) => {
     openCloseButtonRef.current.widenBottomBar(); // method from useImperativeHandle in the ref
     hideAllMenuItems(navItemsRef.current);
     menuState = "closed";
-    props.onClose(); // pass to React parent via props
+    props.onClose(); // inform parent component via props
   }, []);
 
   const touchControlMenu = useCallback((event) => {
@@ -181,21 +180,21 @@ const NavMenu = forwardRef((props, ref) => {
             key={index}
             ref={(el) => (navItemsRef.current[index + 1] = el)} // index + 1 because NavShaderButton is first
           >
-            {item.type === "Link" && (
-              <Link
-                className="px-[0.5em] py-[6px] text-black-off"
-                href={item.href}
-              >
-                {item.text}
-              </Link>
-            )}
-            {item.type === "a" && (
+            {/* You can just store links to remote urls with next/link component, so the ternary expression isn't really necesssary here, but I'm being specific */}
+            {item.href.startsWith("http") ? (
               <a
                 className="px-[0.5em] py-[6px] text-black-off"
                 href={item.href}
               >
                 {item.text}
               </a>
+            ) : (
+              <Link
+                className="px-[0.5em] py-[6px] text-black-off"
+                href={item.href}
+              >
+                {item.text}
+              </Link>
             )}
           </NavItemButton>
         ))}

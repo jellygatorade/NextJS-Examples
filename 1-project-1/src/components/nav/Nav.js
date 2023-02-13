@@ -8,10 +8,10 @@ import TopMargin from "./TopMargin";
  * Define the menu items
  *****************************************/
 const navItems = [
-  { type: "Link", href: "/", text: "Home" },
-  { type: "Link", href: "/about", text: "About" },
-  { type: "Link", href: "/contact", text: "Contact" },
-  { type: "a", href: "https://www.google.com", text: "Google" },
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About" },
+  { href: "/contact", text: "Contact" },
+  { href: "https://www.google.com", text: "Google" },
 ];
 
 /*****************************************
