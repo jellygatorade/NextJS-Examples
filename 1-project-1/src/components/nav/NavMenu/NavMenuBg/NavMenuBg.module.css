@@ -22,7 +22,7 @@
     rgba(0, 255, 0, 0.85) 100%
   );
   /* height: var(--fade-height-1x); */
-  height: 100px;
+  /* height: 100px; */
 }
 
 .nav-bg-full {
@@ -40,5 +40,5 @@
     rgba(0, 0, 255, 0.85) 100%
   );
   /* height: var(--fade-height-2x); */
-  height: 200px;
+  /* height: 200px; */
 }

@@ -4,8 +4,10 @@ const allClasses = `absolute z-[50] top-0 left-0 w-full transition-all duration-
   classes[`nav-bg-full`]
 }`;
 
-function NavMenuBgFull() {
-  return <div className={allClasses}></div>;
+function NavMenuBgFull(props) {
+  return (
+    <div className={allClasses} style={{ height: 2 * props.height }}></div>
+  );
 }
 
 export default NavMenuBgFull;

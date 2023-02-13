@@ -146,6 +146,7 @@ const NavMenu = forwardRef((props, ref) => {
     openCloseButtonRef.current.shortenBottomBar(); // method from useImperativeHandle in the ref
     showAllMenuItems(navItemsRef.current);
     menuState = "open";
+    props.onOpen(); // pass to React parent via props
   }, []);
 
   const closeMenu = useCallback(() => {
@@ -153,6 +154,7 @@ const NavMenu = forwardRef((props, ref) => {
     openCloseButtonRef.current.widenBottomBar(); // method from useImperativeHandle in the ref
     hideAllMenuItems(navItemsRef.current);
     menuState = "closed";
+    props.onClose(); // pass to React parent via props
   }, []);
 
   const touchControlMenu = useCallback((event) => {

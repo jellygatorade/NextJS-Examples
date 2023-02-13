@@ -1,21 +1,51 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useCallback, useEffect, useState } from "react";
 
 import NavMenu from "./NavMenu/NavMenu";
 import NavMenuBg from "./NavMenu/NavMenuBg/NavMenuBg";
 import TopMargin from "./TopMargin";
 
+//
+
 function Nav() {
   const navMenuRef = useRef(null);
+  const [scrollAtTop, setScrollAtTop] = useState(true);
   const [navMenuHeight, setNavMenuHeight] = useState(0);
+  const [navMenuIsOpen, setNavMenuIsOpen] = useState(false);
 
+  const scrollHandler = useCallback(() => {
+    if (document.documentElement.scrollTop === 0) {
+      setScrollAtTop(true);
+    } else if (document.documentElement.scrollTop > 0) {
+      if (scrollAtTop) {
+        setScrollAtTop(false);
+      }
+    }
+  }, []);
+
+  // "init" operations run as a React side effect with no dependencies
+  // Set initial height and window listeners
   useEffect(() => {
     setNavMenuHeight(navMenuRef.current.offsetHeight);
+
+    function handleResize() {
+      setNavMenuHeight(navMenuRef.current.offsetHeight);
+    }
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", scrollHandler);
   }, []);
 
   return (
     <>
-      <NavMenu ref={navMenuRef} />
-      <NavMenuBg />
+      <NavMenu
+        ref={navMenuRef}
+        onOpen={() => setNavMenuIsOpen(true)}
+        onClose={() => setNavMenuIsOpen(false)}
+      />
+      <NavMenuBg
+        height={scrollAtTop ? 0 : navMenuHeight}
+        navMenuIsOpen={navMenuIsOpen}
+      />
       <TopMargin height={navMenuHeight} />
     </>
   );
